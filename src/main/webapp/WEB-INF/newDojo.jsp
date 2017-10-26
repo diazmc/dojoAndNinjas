@@ -9,12 +9,20 @@
 	</head>
 	
 	<style>
-		html {
+		h1, form {
 			text-align:center;
+			margin-top: 30px;
+		}
+		
+		#all_dojos {
+			text-align: left;
+			margin-top: 15px;
 		}
 	</style>
 	
 	<body>
+		
+		<a id="all_dojos" href="/">All Dojos</a>
 	
 		<h1>New Dojo</h1>
 	
@@ -26,6 +34,7 @@
 			<input type="submit" value="Create">
 			
 		</form>
+		
 	
 	</body>
 

@@ -14,6 +14,9 @@ public class Dojo {
 	@Size(min = 1, max = 20)
 	private String name;
 	
+	public Dojo() {
+	}
+	
 	
 	
 

@@ -2,38 +2,46 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>New Ninja</title>
-</head>
-
-<style>
-	html {
-		text-align: center;
-	}
-</style>
-
-<body>
-
-	<h1>New Ninja</h1>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>New Ninja</title>
+	</head>
 	
-	<form method="POST">
+	<style>
+		h1, form {
+			text-align: center;
+		}
+		
+		#all_dojos {
+			text-align: left;
+		}
+		
+	</style>
 	
-		<label>Dojo: </label>
-		<select></select><br><br>
+	<body>
+	
+		<a id="all_dojos" href="/">All Dojos</a>
+	
+		<h1>New Ninja</h1>
 		
-		<label>First Name: </label>
-		<input type="text" name="first_name"><br><br>
+		<form method="POST">
 		
-		<label>Last Name: </label>
-		<input type="text" name="last_name"><br><br>
+			<label>Dojo: </label>
+			<select></select><br><br>
+			
+			<label>First Name: </label>
+			<input type="text" name="first_name"><br><br>
+			
+			<label>Last Name: </label>
+			<input type="text" name="last_name"><br><br>
+			
+			<label>Age:</label>
+			<input type="text" name="age"><br><br>
+			
+			<input type="submit" value="Create">
+			
+		</form>
 		
-		<label>Age:</label>
-		<input type="text" name="age"><br><br>
-		
-		<input type="submit" value="Create">
-		
-	</form>
-
-</body>
+	
+	</body>
 </html>
