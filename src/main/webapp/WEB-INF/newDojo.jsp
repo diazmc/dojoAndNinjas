@@ -34,9 +34,9 @@
 	
 		<form:form method="POST" action="/dojos/new" modelAttribute="dojo">
 		
+			<form:errors class="error" path="name"/><br><br>
 			<label>Name: </label>
 			<input type="text" name="name"><br><br>
-			<form:errors class="error" path="name"/><br><br>
 			
 			<input type="submit" value="Create">
 			

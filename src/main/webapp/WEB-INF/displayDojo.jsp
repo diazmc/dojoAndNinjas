@@ -47,7 +47,7 @@
 				<td>${ninja.firstName}</td>
 				<td>${ninja.lastName}</td>
 				<td>${ninja.age}</td>
-				<td><a href="/delete/ninja/${ninja.id}">Delete</a></td>
+				<td><a href="/ninja/${ninja.id}">Edit</a> / <a href="/delete/ninja/${ninja.id}">Delete</a></td>
 			</tr>
 		</c:forEach>
 		</table>

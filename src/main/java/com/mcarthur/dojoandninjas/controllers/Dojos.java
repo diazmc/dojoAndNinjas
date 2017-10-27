@@ -84,6 +84,13 @@ public class Dojos {
 		return "redirect:/";
 	}
 	
+	@RequestMapping("/ninja/{id}")
+	public String displayNinja(@PathVariable("id") Long id, Model model) {
+		Ninja ninja = ninjaService.findById(id);
+		
+		model.addAttribute("ninja", ninja);
+		return "editNinja.jsp";
+	}
 	
 	
 }
