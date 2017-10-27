@@ -1,9 +1,13 @@
 package com.mcarthur.dojoandninjas.services;
 
+import org.springframework.stereotype.Service;
+
 import com.mcarthur.dojoandninjas.models.Dojo;
 import com.mcarthur.dojoandninjas.repositories.DojoRepository;
 
+@Service
 public class DojoService {
+	
 	private DojoRepository dojoRepo;
 	public DojoService(DojoRepository dojoRepo) {
 		this.dojoRepo = dojoRepo;

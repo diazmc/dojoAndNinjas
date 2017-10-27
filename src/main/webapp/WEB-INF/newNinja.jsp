@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -24,16 +25,20 @@
 	
 		<h1>New Ninja</h1>
 		
-		<form method="POST">
+		<form method="POST" action="/ninjas/new">
 		
 			<label>Dojo: </label>
-			<select></select><br><br>
+			<select name="dojo">
+				<c:forEach items="${dojos}" var="dojo">
+					<option value="${dojo.id}">${dojo.name}</option>			
+				</c:forEach>
+			</select><br><br>
 			
 			<label>First Name: </label>
-			<input type="text" name="first_name"><br><br>
+			<input type="text" name="firstName"><br><br>
 			
 			<label>Last Name: </label>
-			<input type="text" name="last_name"><br><br>
+			<input type="text" name="lastName"><br><br>
 			
 			<label>Age:</label>
 			<input type="text" name="age"><br><br>

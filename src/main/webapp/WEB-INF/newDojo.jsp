@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	
@@ -18,6 +19,11 @@
 			text-align: left;
 			margin-top: 15px;
 		}
+		
+		.error {
+			font-weigth: bold;
+			color: red;
+		}
 	</style>
 	
 	<body>
@@ -26,14 +32,15 @@
 	
 		<h1>New Dojo</h1>
 	
-		<form method="POST">
+		<form:form method="POST" action="/dojos/new" modelAttribute="dojo">
 		
 			<label>Name: </label>
-			<input type="text" name="name">
+			<input type="text" name="name"><br><br>
+			<form:errors class="error" path="name"/><br><br>
 			
 			<input type="submit" value="Create">
 			
-		</form>
+		</form:form>
 		
 	
 	</body>

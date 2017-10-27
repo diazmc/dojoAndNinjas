@@ -1,8 +1,16 @@
 package com.mcarthur.dojoandninjas.controllers;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.mcarthur.dojoandninjas.models.*;
 import com.mcarthur.dojoandninjas.services.*;
 
 @Controller
@@ -17,18 +25,57 @@ public class Dojos {
 	}
 	
 	@RequestMapping("/")
-	public String index() {
+	public String index(Model model) {
+		Iterable<Dojo> dojos = dojoService.allDojos();
+		
+		model.addAttribute("dojos", dojos);
 		return "index.jsp";
 	}
-
+	
 	@RequestMapping("/dojos/new")
 	public String newDojo() {
 		return "newDojo.jsp";	
 	}
 	
+	@PostMapping("/dojos/new")
+	public String addDojo(@Valid @ModelAttribute("dojo") Dojo dojo, BindingResult result) {
+		if(result.hasErrors()) {
+			
+			return "newDojo.jsp";
+		}
+		else {
+			dojoService.addDojo(dojo);
+			return "redirect:/ninjas/new";
+		}
+	}
+	
 	@RequestMapping("/ninjas/new")
-	public String newNinja() {
+	public String newNinja(Model model) {
+		Iterable<Dojo> dojos = dojoService.allDojos();
+		
+		model.addAttribute("dojos", dojos);
 		return "newNinja.jsp";
 	}
+	
+	@PostMapping("/ninjas/new")
+	public String addNinja(@Valid @ModelAttribute("ninja") Ninja ninja, BindingResult result) {
+		if(result.hasErrors()) {
+			return "newNinja.jsp";
+		}
+		else {
+			ninjaService.addNinja(ninja);
+			return "redirect:/";
+		}
+	}
+	
+	
+	@RequestMapping("/dojos/{id}")
+	public String displayDojo(@PathVariable("id") Long id, Model model) {
+		Dojo dojo = dojoService.findById(id);
+		
+		model.addAttribute("dojo", dojo);
+		return "displayDojo.jsp";
+	}
+	
 	
 }
