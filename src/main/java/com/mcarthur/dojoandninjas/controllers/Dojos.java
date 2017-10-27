@@ -68,7 +68,6 @@ public class Dojos {
 		}
 	}
 	
-	
 	@RequestMapping("/dojos/{id}")
 	public String displayDojo(@PathVariable("id") Long id, Model model) {
 		Dojo dojo = dojoService.findById(id);
@@ -76,6 +75,15 @@ public class Dojos {
 		model.addAttribute("dojo", dojo);
 		return "displayDojo.jsp";
 	}
+	
+	@RequestMapping("/delete/ninja/{id}")
+	public String deleteNinja(@PathVariable("id") Long id) {
+		Ninja ninja = ninjaService.findById(id);
+		ninjaService.destroyNinja(ninja);
+		
+		return "redirect:/";
+	}
+	
 	
 	
 }

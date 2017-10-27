@@ -20,4 +20,11 @@ public class NinjaService {
 		ninjaRepo.save(ninja);
 	}
 	
+	public Ninja findById(Long id) {
+		return ninjaRepo.findOne(id);
+	}
+	
+	public void destroyNinja(Ninja ninja) {
+		ninjaRepo.delete(ninja);
+	}
 }

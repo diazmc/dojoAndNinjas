@@ -25,11 +25,16 @@
 		
 		table {
 		    width: 100%;
-		    padding-left: 10px;
+		    border-collapse: collapse;
 		}
 
-		th {
+		th, td {
 		    height: 50px;
+		    padding-left: 10px;
+		}
+		
+		table, th, td {
+	 		border: 1px solid black;
 		}
 	
 	</style>

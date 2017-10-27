@@ -15,12 +15,18 @@
 	
 		table {
 		    width: 100%;
-		    padding-left: 10px;
+		    border-collapse: collapse;
 		}
 
-		th {
-		    height: 50px;	
+		th, td {
+		    height: 50px;
+		    padding-left: 10px;
 		}
+		
+		table, th, td {
+	 		border: 1px solid black;
+		}
+		
 	</style>
 	<body>
 		<a id="all_dojos" href="/">All Dojos</a>
@@ -41,7 +47,7 @@
 				<td>${ninja.firstName}</td>
 				<td>${ninja.lastName}</td>
 				<td>${ninja.age}</td>
-				<td></td>
+				<td><a href="/delete/ninja/${ninja.id}">Delete</a></td>
 			</tr>
 		</c:forEach>
 		</table>
