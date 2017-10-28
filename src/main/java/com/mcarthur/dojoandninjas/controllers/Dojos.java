@@ -45,7 +45,7 @@ public class Dojos {
 		}
 		else {
 			dojoService.addDojo(dojo);
-			return "redirect:/ninjas/new";
+			return "redirect:/";
 		}
 	}
 	
@@ -90,6 +90,19 @@ public class Dojos {
 		
 		model.addAttribute("ninja", ninja);
 		return "editNinja.jsp";
+	}
+	
+	@PostMapping("/ninja/{id}")
+	public String editNinja(@PathVariable("id") Long id, @Valid @ModelAttribute("ninja") Ninja ninja,BindingResult result) {
+		if(result.hasErrors()) {
+			return "editNinja.jsp";
+		}
+		else {
+			
+			ninjaService.updateNinja(id, ninja);
+			
+			return "redirect:/";			
+		}
 	}
 	
 	

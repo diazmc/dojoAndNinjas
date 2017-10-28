@@ -56,6 +56,7 @@
 			<tr>
 				<th>Location</th>
 				<th>Number of Ninjas</th>
+				
 			</tr>
 			
 			<c:forEach items="${dojos}" var="dojo">
