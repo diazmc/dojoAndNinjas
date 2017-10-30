@@ -98,10 +98,12 @@ public class Dojos {
 			return "editNinja.jsp";
 		}
 		else {
+			Ninja currentNinja = ninjaService.findById(id);
 			
 			ninjaService.updateNinja(id, ninja);
+			Long dojoId = currentNinja.getDojo().getId();
 			
-			return "redirect:/";			
+			return "redirect:/dojos/" + dojoId;			
 		}
 	}
 	
