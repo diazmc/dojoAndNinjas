@@ -36,7 +36,7 @@
 	
 		<h1>New Ninja</h1>
 		
-		<form:form method="POST" action="/ninjas/new">
+		<form:form method="POST" action="/ninjas/new" modelAttribute="ninja">
 		
 			<label>Dojo: </label>
 			<select name="dojo">
@@ -45,6 +45,7 @@
 				</c:forEach>
 			</select><br><br>
 
+			<form:errors class="error" path="firstName"/>
 			<label>First Name: </label>
 			<input type="text" name="firstName"><br><br>
 		
