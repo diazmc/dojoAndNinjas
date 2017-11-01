@@ -44,6 +44,7 @@
 					<option value="${dojo.id}">${dojo.name}</option>			
 				</c:forEach>
 			</select><br><br>
+			<form:errors path="dojo"/>
 
 			<form:errors class="error" path="firstName"/>
 			<label>First Name: </label>

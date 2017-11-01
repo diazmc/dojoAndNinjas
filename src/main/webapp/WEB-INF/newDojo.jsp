@@ -36,7 +36,7 @@
 		
 			<form:errors class="error" path="name"/><br><br>
 			<label>Name: </label>
-			<input type="text" name="name"><br><br>
+			<input type="text" name="name" placeholder="Enter a city"><br><br>
 			
 			<input type="submit" value="Create">
 			

@@ -3,7 +3,6 @@ package com.mcarthur.dojoandninjas.models;
 import java.util.Date;
 
 import javax.persistence.*;
-import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="ninjas")
@@ -12,15 +11,14 @@ public class Ninja {
 	@Id
 	@GeneratedValue
 	private Long id;
-	
-	@Column
-	@Size(min = 1, max = 20, message="First name cannot be empty")
+
 	private String firstName;
 	private String lastName;
 	private int age;
 	private Date createdAt;
 	private Date updatedAt;
 	
+
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="dojo_id")
 	private Dojo dojo;

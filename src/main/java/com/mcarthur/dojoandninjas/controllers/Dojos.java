@@ -99,7 +99,6 @@ public class Dojos {
 		}
 		else {
 			Ninja currentNinja = ninjaService.findById(id);
-			
 			ninjaService.updateNinja(id, ninja);
 			Long dojoId = currentNinja.getDojo().getId();
 			
